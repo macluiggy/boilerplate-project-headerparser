@@ -32,8 +32,8 @@ app.get('/api/whoami', (req, res) => {
   //console.log(clientIp);
   res.json({
     ipaddress: req.ip,
-    language: 'javascript',
-    software: 'ubuntu'
+    language: req.get('Accept-Language'),
+    software: req.get('User-Agent')
   })
 })
 // listen for requests :)
