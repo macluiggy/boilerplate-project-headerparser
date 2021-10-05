@@ -28,10 +28,10 @@ app.get("/api/hello", function (req, res) {
 //PROJECT PART
 
 app.get('/api/whoami', (req, res) => {
-  const clientIp = requestIp.getClientIp(req);
-  console.log(clientIp);
+  //const clientIp = requestIp.getClientIp(req);
+  //console.log(clientIp);
   res.json({
-    ipaddress: clientIp,
+    ipaddress: req.ip,
     language: 'javascript'
   })
 })
