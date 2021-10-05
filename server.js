@@ -12,13 +12,12 @@ var cors = require('cors');
 app.use(cors({optionsSuccessStatus: 200}));  // some legacy browsers choke on 204
 
 // http://expressjs.com/en/starter/static-files.html
-app.use(express.static(__dirname + 'public'));
+app.use(express.static(__dirname + '/public'));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
-
 
 // your first API endpoint... 
 app.get("/api/hello", function (req, res) {
