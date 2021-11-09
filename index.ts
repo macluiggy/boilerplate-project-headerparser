@@ -15,18 +15,33 @@ app.use(cors({optionsSuccessStatus: 200}));  // some legacy browsers choke on 20
 app.use(express.static(__dirname + '/public'));
 
 // http://expressjs.com/en/starter/basic-routing.html
-app.get("/", function (_, res) {
+interface SendFileRequest {
+  sendFile: (path: string) => void;
+}
+app.get("/", function (_:any, res: SendFileRequest) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
 // your first API endpoint... 
-app.get("/api/hello", function (req, res) {
+interface ApiHelloRequestJson {
+  greeting: string;
+}
+type ApiHelloRequest = {
+  json: (jsonObject: ApiHelloRequestJson) => void
+}
+app.get("/api/hello", function (_:any, res: ApiHelloRequest) {
   res.json({greeting: 'hello API'});
 });
 
 //PROJECT PART
-
-app.get('/api/whoami', (req, res) => {
+type ApiWhoAmIRequest = {
+  ip: string;
+  get: (val: string) => string;
+}
+interface ApiWhoAmIResponse {
+  json: ({ipaddress, language, software}: {ipaddress:string, language: string, software:string}) => void
+}
+app.get('/api/whoami', (req: ApiWhoAmIRequest, res: ApiWhoAmIResponse) => {
   res.json({
     ipaddress: req.ip,
     language: req.get('Accept-Language'),
