@@ -4,12 +4,16 @@
 	"description": "API project for freeCodeCamp",
 	"main": "index.js",
 	"scripts": {
-		"start": "node index.js"
+		"start": "node index.js",
+		"dev": "nodemon index.ts"
 	},
 	"dependencies": {
+		"@types/node": "^16.11.7",
 		"cors": "^2.8.1",
 		"dotenv": "^8.2.0",
-		"express": "^5.0.0-alpha.2"
+		"express": "^5.0.0-alpha.2",
+		"ts-node": "^10.4.0",
+		"typescript": "^4.4.4"
 	},
 	"repository": {
 		"type": "git",
@@ -20,5 +24,8 @@
 		"hyperdev",
 		"express"
 	],
-	"license": "MIT"
+	"license": "MIT",
+	"devDependencies": {
+		"nodemon": "^2.0.14"
+	}
 }
