@@ -8,11 +8,11 @@ and it's a part of Back End Development and APIs Certification by [freeCodeCamp]
 
 ## Requirements
 
--[X] A request to `/api/whoami` should return a JSON object with your IP address in the `ipaddress` key.
+- [X] A request to `/api/whoami` should return a JSON object with your IP address in the `ipaddress` key.
 
--[x] A request to `/api/whoami` should return a JSON object with your preferred language in the `language` key.
+- [x] A request to `/api/whoami` should return a JSON object with your preferred language in the `language` key.
 
--[x] A request to `/api/whoami` should return a JSON object with your software in the `software` key.
+- [x] A request to `/api/whoami` should return a JSON object with your software in the `software` key.
 
 
 [Back End Development and APIs Projects - Request Header Parser Microservice]: https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/request-header-parser-microservice
